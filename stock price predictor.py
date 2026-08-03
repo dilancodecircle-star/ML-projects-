@@ -9,7 +9,7 @@ from sklearn.metrics import mean_squared_error , r2_score
 from sklearn.linear_model import Lasso , Ridge
 from sklearn.svm import SVR
 from sklearn.model_selection import GridSearchCV
-
+import joblib 
 stocks  = input("Enter the code of stock : ")
 data = yf.download(stocks , start = "2020-01-01" , end = "2026-01-01" , auto_adjust = True)
 print(data.head())
@@ -77,3 +77,7 @@ grid.fit(x_train , y_train)
 svr  = SVR(C = 10 , gamma = 0.01 , kernel = 'rbf')
 svr.fit(x_train , y_train)
 svr_pred = svr.predict(x_test)
+
+joblib.dumps(svr ,  'model.pkl')
+model = joblib.load('model.pkl')
+ridge_from_joblib = model = joblib.load('model.pkl')
