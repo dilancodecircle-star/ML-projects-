@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error , r2_score
 stocks  = input("Enter the code of stock : ")
 data = yf.download(stocks , start = "2020-01-01" , end = "2026-01-01" , auto_adjust = True)
 print(data.head())
@@ -36,4 +37,16 @@ model = LinearRegression()
 model.fit(x_train , y_train)
 predict1 = model.predict(x_test)
 print(predict1)
+
+
+def calculate_metrics(y_test , y_pred):
+    #y_test = truth valu and y_pred = model predicted value
+    mse = mean_squared_error(y_test , y_pred)
+    rmse = np.sqrt(mse)
+    r2 = r2_score(y_test , y_pred)
+    print("Mean Squared Error (MSE):", mse)
+    print("Root Mean Squared Error (RMSE):", rmse)
+    print("R-squared (R2):", r2)
+
+calculate_metrics(y_test , predict1)
 
