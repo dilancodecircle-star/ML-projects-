@@ -6,7 +6,7 @@ import yfinance as yf
 
 stocks  = input("Enter the code of stock : ")
 data = yf.download(stocks , start = "2020-01-01" , end = "2026-01-01" , auto_adjust = True)
-data.head()
-
-
-
+print(data.head())
+print(data.info())
+print(data.shape)
+print(data.describe())
