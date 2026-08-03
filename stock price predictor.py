@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import yfinance as yf
 from sklearn.model_selection import train_test_split
-
+from sklearn.linear_model import LinearRegression
 stocks  = input("Enter the code of stock : ")
 data = yf.download(stocks , start = "2020-01-01" , end = "2026-01-01" , auto_adjust = True)
 print(data.head())
@@ -31,3 +31,9 @@ print(x_train.shape)
 print(x_test.shape)
 print(y_train.shape)
 print(y_test.shape)
+
+model = LinearRegression()
+model.fit(x_train , y_train)
+predict1 = model.predict(x_test)
+print(predict1)
+
