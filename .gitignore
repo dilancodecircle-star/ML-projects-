@@ -1,0 +1,24 @@
+# Subdirectories / nested repos
+ML-projects-/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environments
+.env
+.venv
+
+# IDE / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
