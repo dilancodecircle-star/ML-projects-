@@ -16,5 +16,5 @@ from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.decomposition import TruncatedSVD
 from sklearn.feature_extraction.text import TfidfVectorizer , CountVectorizer
 from sklearn.pipeline import Pipeline
-from sklearn.naive_bayes import MultinominalNB
+from sklearn.naive_bayes import MultinomialNB
 py.init_notebook_mode(connected = True)
