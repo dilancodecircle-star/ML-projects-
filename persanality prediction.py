@@ -18,3 +18,5 @@ from sklearn.feature_extraction.text import TfidfVectorizer , CountVectorizer
 from sklearn.pipeline import Pipeline
 from sklearn.naive_bayes import MultinomialNB
 py.init_notebook_mode(connected = True)
+
+train = pd.read_csv('mbti_1.csv')
